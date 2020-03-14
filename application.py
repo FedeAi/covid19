@@ -36,18 +36,22 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
 badges = dbc.Container(
     [
-        dbc.Badge("LinkedIn", href="https://www.linkedin.com/in/federico-sarrocco-6240b5164/", color="primary", className="mr-1"),
-        dbc.Badge("Mail", href="mailto:federico.sarrocco@mail.polimi.it", color="secondary", className="mr-1"),
-        dbc.Badge("Instagram", href="https://www.instagram.com/fedesarrocco/", color="success", className="mr-1"),
+        dbc.Badge("LinkedIn", href="https://www.linkedin.com/in/federico-sarrocco-6240b5164/",
+                  color="primary", className="mr-1"),
+        dbc.Badge("Mail", href="mailto:federico.sarrocco@mail.polimi.it",
+                  color="secondary", className="mr-1"),
+        dbc.Badge("Instagram", href="https://www.instagram.com/fedesarrocco/",
+                  color="success", className="mr-1"),
         html.Br(),
         dbc.Alert(
             [
                 "Supporta il progetto: ",
-                html.A("PayPal", href="https://paypal.me/Sarrocco?locale.x=it_IT", className="alert-link"),
+                html.A("PayPal", href="https://paypal.me/Sarrocco?locale.x=it_IT",
+                       className="alert-link"),
             ],
             color="warning",
         ),
-        
+
     ]
 )
 
@@ -92,6 +96,13 @@ graphs = dbc.Container([
                 ),
             ],
             layout=dict(
+                xaxis=dict(
+                    fixedrange=True
+                ),
+                yaxis=dict(
+                    autorange='false',
+                    fixedrange=True
+                ),
                 title='Ospedalizzati',
                 showlegend=True,
                 legend=dict(
@@ -123,6 +134,13 @@ graphs = dbc.Container([
 
             ],
             layout=dict(
+                xaxis=dict(
+                    fixedrange=True
+                ),
+                yaxis=dict(
+                    autorange='false',
+                    fixedrange=True
+                ),
                 title='Totale / Guariti',
                 showlegend=True,
                 legend=dict(
@@ -141,7 +159,7 @@ graphs = dbc.Container([
         Rappresentato il rapporto tra il numero totale di casi e i dimessi-guariti. Quando la curva crese significa che l'incremento percentuale di nuovi casi è maggiore dell'incremento percentuale di guariti. Un valore > 1 evidenzia che i guariti sono in numero inferiore rispetto ai malati. 
     '''),
     ]),
-    
+
 
     html.Br(),
     html.Br(),
@@ -179,7 +197,13 @@ graphs = dbc.Container([
 
             ],
             layout=dict(
-
+                xaxis=dict(
+                    fixedrange=True
+                ),
+                yaxis=dict(
+                    autorange='false',
+                    fixedrange=True
+                ),
                 title='Tamponi / Positivi   &   Ospedalizzati / Terapia Intensiva',
                 showlegend=True,
                 legend=dict(
@@ -189,7 +213,7 @@ graphs = dbc.Container([
                 margin=dict(l=40, r=0, t=40, b=30)
             )
         ),
-     
+
         style={'height': 400},
         id='tamponi'
     ),
