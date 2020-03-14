@@ -8,8 +8,7 @@ import pandas as pd
 
 external_stylesheets = [dbc.themes.BOOTSTRAP]
 
-df = pd.read_json(
-    'https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale.json')
+df = pd.read_json('https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale.json')
 
 
 def generate_table(dataframe, max_rows=10):
@@ -43,14 +42,15 @@ badges = dbc.Container(
         dbc.Badge("Instagram", href="https://www.instagram.com/fedesarrocco/",
                   color="success", className="mr-1"),
         html.Br(),
-        dbc.Alert(
-            [
-                "Supporta il progetto: ",
-                html.A("PayPal", href="https://paypal.me/Sarrocco?locale.x=it_IT",
-                       className="alert-link"),
-            ],
-            color="warning",
-        ),
+        html.Br(),
+        # dbc.Alert(
+        #    [
+        #        "Supporta il progetto: ",
+        #        html.A("PayPal", href="https://paypal.me/Sarrocco?locale.x=it_IT",
+        #               className="alert-link"),
+        #    ],
+        #    color="warning",
+        # ),
 
     ]
 )
@@ -230,7 +230,18 @@ heading = dbc.Container([
     html.Div(children=html.H3('''
         Visualizzazione grafica
     ''')),
+    dbc.Row([
+        dbc.Col(html.H3(["positivi: ", dbc.Badge(str(
+            df.iloc[-1].totale_attualmente_positivi), color="danger", className="ml-1")])),
+        dbc.Col(html.H3(["guariti: ",  dbc.Badge(
+            str(df.iloc[-1].dimessi_guariti), color="success", className="ml-1")])),
+        dbc.Col(html.H3(["terapia intensiva: ",  dbc.Badge(
+            str(df.iloc[-1].terapia_intensiva), color="warning", className="ml-1")])),
+    ]),
+
     # generate_table(df)
+    html.Br(),
+    html.Br(),
 ],
     className="mt-4",)
 
