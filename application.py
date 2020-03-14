@@ -5,7 +5,7 @@ import dash_html_components as html
 import pandas as pd
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
-df = pd.read_json('/home/federico/Documents/progetti/covid19/COVID-19/dati-json/dpc-covid19-ita-andamento-nazionale.json')
+df = pd.read_json('https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale.json')
 
 
 def generate_table(dataframe, max_rows=10):
