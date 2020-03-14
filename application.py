@@ -4,11 +4,15 @@ import dash_core_components as dcc
 import dash_bootstrap_components as dbc
 import dash_html_components as html
 import pandas as pd
-
+import json
 
 external_stylesheets = [dbc.themes.BOOTSTRAP]
 
-df = pd.read_json('https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale.json')
+file = 'COVID-19/dati-json/dpc-covid19-ita-andamento-nazionale.json'
+link = 'https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale.json'
+df = pd.read_json(file)
+
+
 
 
 def generate_table(dataframe, max_rows=10):
