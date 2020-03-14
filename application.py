@@ -176,5 +176,6 @@ app.layout = html.Div(children=[html.Center(
     #generate_table(df)
 ])
 
+application = app.server
 if __name__ == '__main__':
-    app.run_server(debug=False)
+    application.run(debug=True, port=8080)

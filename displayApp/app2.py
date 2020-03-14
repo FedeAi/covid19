@@ -41,7 +41,7 @@ layout = dict(
         title = 'Most trafficked US airports<br>(Hover for airport names)',
         colorbar = True,
         geo = dict(
-            scope='italy',
+            scope='usa',
             projection=dict( type='albers usa' ),
             showland = True,
             landcolor = "rgb(250, 250, 250)",
