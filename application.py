@@ -136,9 +136,12 @@ graphs = dbc.Container([
         id='isolati'
     ),
     html.Br(),
-    html.Div(children='''
+    dbc.Container([
+        html.P('''
         Rappresentato il rapporto tra il numero totale di casi e i dimessi-guariti. Quando la curva crese significa che l'incremento percentuale di nuovi casi è maggiore dell'incremento percentuale di guariti. Un valore > 1 evidenzia che i guariti sono in numero inferiore rispetto ai malati. 
     '''),
+    ]),
+    
 
     html.Br(),
     html.Br(),
@@ -186,6 +189,11 @@ graphs = dbc.Container([
                 margin=dict(l=40, r=0, t=40, b=30)
             )
         ),
+        layout = dict(
+            xaxis={'title': 'x-axis','fixedrange':True},
+            yaxis={'title': 'y-axis','fixedrange':True}
+            ),
+        
         style={'height': 400},
         id='tamponi'
     ),
