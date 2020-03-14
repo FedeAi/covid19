@@ -189,11 +189,7 @@ graphs = dbc.Container([
                 margin=dict(l=40, r=0, t=40, b=30)
             )
         ),
-        layout = dict(
-            xaxis={'title': 'x-axis','fixedrange':True},
-            yaxis={'title': 'y-axis','fixedrange':True}
-            ),
-        
+     
         style={'height': 400},
         id='tamponi'
     ),
