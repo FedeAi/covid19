@@ -10,8 +10,10 @@ external_stylesheets = [dbc.themes.BOOTSTRAP]
 
 file = 'COVID-19/dati-json/dpc-covid19-ita-andamento-nazionale.json'
 link = 'https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale.json'
-df = pd.read_json(link)
-
+try:
+    df = pd.read_json(link)
+except:
+    df = pd.read_json(file)
 
 
 
